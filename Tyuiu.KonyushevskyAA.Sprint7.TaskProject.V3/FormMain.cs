@@ -18,5 +18,16 @@ namespace Tyuiu.KonyushevskyAA.Sprint7.TaskProject.V3
         {
             InitializeComponent();
         }
+
+        private void buttoninfo_KAA_Click(object sender, EventArgs e)
+        {
+            FormAbout formAbout = new FormAbout();
+            formAbout.ShowDialog();
+        }
+
+        private void buttonOpen_KAA_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
