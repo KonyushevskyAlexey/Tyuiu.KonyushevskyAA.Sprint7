@@ -21,8 +21,8 @@ namespace Tyuiu.KonyushevskyAA.Sprint7.TaskProject.V3
             InitializeComponent();
 
 
-          //  openFileDialogTask_KAA.Filter = "Значения, разделённые запятыми(*.csv)|*.csv|Все файлы(*.*)|*.*";
-            //saveFileDialogTask_KAA.Filter = "Значения, разделённые запятыми(*.csv)|*.csv|Все файлы(*.*)|*.";
+          openFileDialogTask_KAA.Filter = "Значения, разделённые запятыми(*.csv)|*.csv|Все файлы(*.*)|*.*";
+          saveFileDialogTask_KAA.Filter = "Значения, разделённые запятыми(*.csv)|*.csv|Все файлы(*.*)|*.";
 
         }
 
@@ -139,11 +139,11 @@ namespace Tyuiu.KonyushevskyAA.Sprint7.TaskProject.V3
             dataGridViewMain_KAA.Columns[7].HeaderText = "Номер Аудитории";
 
             dataGridViewMain_KAA.Columns[0].Width = 50;
-            dataGridViewMain_KAA.Columns[1].Width = 50;
-            dataGridViewMain_KAA.Columns[2].Width = 50;
-            dataGridViewMain_KAA.Columns[3].Width = 50;
-            dataGridViewMain_KAA.Columns[4].Width = 50;
-            dataGridViewMain_KAA.Columns[5].Width = 50;
+            dataGridViewMain_KAA.Columns[1].Width = 200;
+            dataGridViewMain_KAA.Columns[2].Width = 130;
+            dataGridViewMain_KAA.Columns[3].Width = 150;
+            dataGridViewMain_KAA.Columns[4].Width = 100;
+            dataGridViewMain_KAA.Columns[5].Width = 100;
             dataGridViewMain_KAA.Columns[6].Width = 50;
             dataGridViewMain_KAA.Columns[7].Width = 50;
 
@@ -209,8 +209,7 @@ namespace Tyuiu.KonyushevskyAA.Sprint7.TaskProject.V3
                 fed.textBoxAddress_KAA.Text = dataGridViewMain_KAA.Rows[a].Cells[2].Value.ToString();
                 fed.textBoxJob_KAA.Text = dataGridViewMain_KAA.Rows[a].Cells[3].Value.ToString();
                 fed.textBoxItem_KAA.Text = dataGridViewMain_KAA.Rows[a].Cells[4].Value.ToString();
-                fed.textBoxPhone_KAA.Text = dataGridViewMain_KAA.Rows
-                    [a].Cells[5].Value.ToString();
+                fed.textBoxPhone_KAA.Text = dataGridViewMain_KAA.Rows[a].Cells[5].Value.ToString();
                 fed.textBoxTime_KAA.Text = dataGridViewMain_KAA.Rows[a].Cells[6].Value.ToString();
                 fed.textBoxAudience_KAA.Text = dataGridViewMain_KAA.Rows[a].Cells[7].Value.ToString();
                 fed.ShowDialog();

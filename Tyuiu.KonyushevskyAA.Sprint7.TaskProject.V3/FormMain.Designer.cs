@@ -141,7 +141,7 @@ namespace Tyuiu.KonyushevskyAA.Sprint7.TaskProject.V3
             this.buttonBaza_KAA.Name = "buttonBaza_KAA";
             this.buttonBaza_KAA.Size = new System.Drawing.Size(297, 42);
             this.buttonBaza_KAA.TabIndex = 0;
-            this.buttonBaza_KAA.Text = "База Преподавателей";
+            this.buttonBaza_KAA.Text = "Работа с Базой\r\n";
             this.buttonBaza_KAA.UseVisualStyleBackColor = true;
             this.buttonBaza_KAA.Click += new System.EventHandler(this.buttonBaza_KAA_Click);
             // 
