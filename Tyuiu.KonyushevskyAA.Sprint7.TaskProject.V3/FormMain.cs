@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.Windows.Forms.DataVisualization.Charting;
+
 using System.IO;
 
 using Tyuiu.KonyushevskyAA.Sprint7.TaskProject.V3.Lib;
@@ -32,7 +34,7 @@ namespace Tyuiu.KonyushevskyAA.Sprint7.TaskProject.V3
 
         DataService ds = new DataService();
 
-        public static string[,] LoadFromFileData(string filePath)
+        public static string[,] LoadFromFileData(string filePath) // Чтение данных из файла 
         {
             string FileData = File.ReadAllText(filePath);
 
@@ -62,7 +64,7 @@ namespace Tyuiu.KonyushevskyAA.Sprint7.TaskProject.V3
             formAbout.ShowDialog();
         }
 
-        private void buttonOpen_KAA_Click(object sender, EventArgs e)
+        private void buttonOpen_KAA_Click(object sender, EventArgs e)  
         {
             openFileDialogTask_KAA.ShowDialog();
             OpenFilePath = openFileDialogTask_KAA.FileName;
@@ -74,6 +76,8 @@ namespace Tyuiu.KonyushevskyAA.Sprint7.TaskProject.V3
             arrayValues = ds.GetBase(OpenFilePath);
 
             
+
+
         }
 
         private void buttonAdd_KAA_Click(object sender, EventArgs e)
@@ -85,7 +89,7 @@ namespace Tyuiu.KonyushevskyAA.Sprint7.TaskProject.V3
                 
         }
 
-        private void buttonSave_KAA_Click(object sender, EventArgs e)
+        private void buttonSave_KAA_Click(object sender, EventArgs e)   //Сохранение данных 
         {
             saveFileDialogTask_KAA.FileName = "TeachersDatabase.csv";
             saveFileDialogTask_KAA.InitialDirectory = Directory.GetCurrentDirectory();
@@ -163,7 +167,25 @@ namespace Tyuiu.KonyushevskyAA.Sprint7.TaskProject.V3
             }
 
             arrayValues = ds.GetBase(OpenFilePath);
-            
+
+
+            Series series = new Series();
+            series.ChartType = SeriesChartType.Column; // Выберите тип графика (столбцовый, линейный и т.д.)
+
+            // Проходимся по значениям из столбца dataGridView_KAA и добавляем их в серию для графика
+            foreach (DataGridViewRow row in dataGridViewMain_KAA.Rows)
+            {
+                // Предполагается, что данные о часах находятся в 7-м столбце
+                if (row.Cells[6].Value != null) // Проверяем, что значение ячейки не пустое
+                {
+                    int hours = Convert.ToInt32(row.Cells[6].Value);
+                    series.Points.Add(hours);
+                }
+            }
+
+            // Добавляем серию на график
+            chartTime_KAA.Series.Add(series);
+
         }
 
         private void buttonDelete_KAA_Click(object sender, EventArgs e)

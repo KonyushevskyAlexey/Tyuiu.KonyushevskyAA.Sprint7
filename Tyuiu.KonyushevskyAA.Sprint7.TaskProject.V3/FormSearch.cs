@@ -27,7 +27,7 @@ namespace Tyuiu.KonyushevskyAA.Sprint7.TaskProject.V3
                 for (int i = 0; i < fmain.dataGridViewMain_KAA.RowCount; i++)
                 {
                     fmain.dataGridViewMain_KAA.Rows[i].Selected = false;
-                    for (int j = comboBoxSearch_KAA.SelectedIndex; j < fmain.dataGridViewMain_KAA.ColumnCount; j++)
+                    for (int j = comboBoxSearch_KAA.SelectedIndex; j <= comboBoxSearch_KAA.SelectedIndex; j++)
                         if (fmain.dataGridViewMain_KAA.Rows[i].Cells[j].Value != null)
                             if (fmain.dataGridViewMain_KAA.Rows[i].Cells[j].Value.ToString().Contains(textBoxSearch_KAA.Text))
                             {
